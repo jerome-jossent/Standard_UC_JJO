@@ -286,11 +286,12 @@ namespace Standard_UC_JJO
         {
             double x = prop_x * _ColorsGrid.ActualWidth;
             double y = prop_y * _ColorsGrid.ActualHeight;
+
             //positions
-            _lineNO.Points = new PointCollection(new List<System.Windows.Point> { new System.Windows.Point(x - _Target_Length, y - 1), new System.Windows.Point(x - 1, y - 1), new System.Windows.Point(x - 1, y - _Target_Length) });
-            _lineNE.Points = new PointCollection(new List<System.Windows.Point> { new System.Windows.Point(x + _Target_Length, y - 1), new System.Windows.Point(x + 1, y - 1), new System.Windows.Point(x + 1, y - _Target_Length) });
-            _lineSE.Points = new PointCollection(new List<System.Windows.Point> { new System.Windows.Point(x - _Target_Length, y + 1), new System.Windows.Point(x - 1, y + 1), new System.Windows.Point(x - 1, y + _Target_Length) });
-            _lineSO.Points = new PointCollection(new List<System.Windows.Point> { new System.Windows.Point(x + _Target_Length, y + 1), new System.Windows.Point(x + 1, y + 1), new System.Windows.Point(x + 1, y + _Target_Length) });
+            _lineNO.Points = new PointCollection(new List<Point> { new Point(x - _Target_Length, y - 1), new Point(x - 1, y - 1), new Point(x - 1, y - _Target_Length) });
+            _lineNE.Points = new PointCollection(new List<Point> { new Point(x + _Target_Length, y - 1), new Point(x + 1, y - 1), new Point(x + 1, y - _Target_Length) });
+            _lineSE.Points = new PointCollection(new List<Point> { new Point(x - _Target_Length, y + 1), new Point(x - 1, y + 1), new Point(x - 1, y + _Target_Length) });
+            _lineSO.Points = new PointCollection(new List<Point> { new Point(x + _Target_Length, y + 1), new Point(x + 1, y + 1), new Point(x + 1, y + _Target_Length) });
 
             //color
             bool isDark = color.R < 120 && color.G < 120 && color.B < 120;
