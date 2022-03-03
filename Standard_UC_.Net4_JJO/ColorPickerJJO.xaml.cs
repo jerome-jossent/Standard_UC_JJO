@@ -60,10 +60,17 @@ namespace Standard_UC_JJO
             int hue = 360;
             int sat = 256; // intensité de couleur 0=blanc, 1=couleur max
             int val = 256; // intensité lumineuse  0=noir, 1=blanc
-            bitmap = new System.Drawing.Bitmap(hue, sat + val);
+            int nbrlignesBW = 20;
+            bitmap = new System.Drawing.Bitmap(hue, sat + val + nbrlignesBW + nbrlignesBW);
 
             for (int x = 0; x < hue; x++)
             {
+                //5 lignes en haut
+                for (int y = 0; y < nbrlignesBW; y++)
+                {
+                    bitmap.SetPixel(x, y, System.Drawing.Color.White);
+                }
+
                 //saturation
                 for (int y = 0; y < sat; y++)
                 {
@@ -74,7 +81,7 @@ namespace Standard_UC_JJO
 
                     RGB rgb = HSVToRGB(hsv);
 
-                    bitmap.SetPixel(x, y, System.Drawing.Color.FromArgb(rgb.R, rgb.G, rgb.B));
+                    bitmap.SetPixel(x, y + nbrlignesBW, System.Drawing.Color.FromArgb(rgb.R, rgb.G, rgb.B));
                 }
 
                 //value
@@ -88,8 +95,15 @@ namespace Standard_UC_JJO
                     RGB rgb = HSVToRGB(hsv);
 
                     //offset spatial ici !!
-                    bitmap.SetPixel(x, y + 256, System.Drawing.Color.FromArgb(rgb.R, rgb.G, rgb.B));
+                    bitmap.SetPixel(x, y + nbrlignesBW + 256, System.Drawing.Color.FromArgb(rgb.R, rgb.G, rgb.B));
                 }
+
+                //5 lignes en bas
+                for (int y = 0; y < nbrlignesBW; y++)
+                {
+                    bitmap.SetPixel(x, y + nbrlignesBW + 256 + 256, System.Drawing.Color.Black);
+                }
+
             }
             _Colors.Source = Convert(bitmap);
         }

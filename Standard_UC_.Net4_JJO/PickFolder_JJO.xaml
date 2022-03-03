@@ -18,6 +18,7 @@
                Height="25"
                VerticalAlignment="Top"
                />
-        <Label Grid.Column="1" x:Name="lbl_folder" Content="{Binding _folder, ElementName=pickFolder}"/>
+        <Label Grid.Column="1" x:Name="lbl_folder" Content="{Binding _folder, ElementName=pickFolder}" Visibility="{Binding _modelbl}"/>
+        <TextBox Grid.Column="1" x:Name="tbx_folder" Text="{Binding _folder, ElementName=pickFolder, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding _modetbx}" VerticalContentAlignment="Center"/>
     </Grid>
 </UserControl>

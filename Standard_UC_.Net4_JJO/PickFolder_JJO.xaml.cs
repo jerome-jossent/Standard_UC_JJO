@@ -17,6 +17,28 @@ namespace Standard_UC_JJO
 {
     public partial class PickFolder_JJO : UserControl
     {
+        public bool _ModeTBX
+        {
+            get => ModeTBX; set
+            {
+                ModeTBX = value;
+                if (ModeTBX)
+                {
+                    _modelbl = Visibility.Collapsed;
+                    _modetbx = Visibility.Visible;
+                }
+                else
+                {
+                    _modelbl = Visibility.Visible;
+                    _modetbx = Visibility.Collapsed;
+                }
+            }
+        }
+        bool ModeTBX;
+
+        public Visibility _modelbl { get; set; }
+        public Visibility _modetbx { get; set; }
+
         public PickFolder_JJO()
         {
             InitializeComponent();
