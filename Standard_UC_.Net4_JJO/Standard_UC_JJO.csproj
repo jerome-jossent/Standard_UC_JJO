@@ -49,11 +49,14 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+
     <Page Include="ColorPickerJJO.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="PickFolder_JJO.xaml">
+    </Page>    <Page Include="PickFile_JJO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>    <Page Include="PickFolder_JJO.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -61,10 +64,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+   <Compile Include="PickFile_JJO.xaml.cs">
+      <DependentUpon>PickFile_JJO.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ColorPickerJJO.xaml.cs">
       <DependentUpon>ColorPickerJJO.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PickFolder_JJO.xaml.cs">
+    </Compile>    <Compile Include="PickFolder_JJO.xaml.cs">
       <DependentUpon>PickFolder_JJO.xaml</DependentUpon>
     </Compile>
     <Compile Include="Slider_JJO.xaml.cs">
