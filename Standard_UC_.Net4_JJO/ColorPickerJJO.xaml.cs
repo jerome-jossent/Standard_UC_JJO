@@ -262,6 +262,7 @@ namespace Standard_UC_JJO
         void Colors_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             colorpickerON = true;
+            Compute(e.GetPosition(_Colors));
         }
 
         void Colors_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -274,7 +275,11 @@ namespace Standard_UC_JJO
             if (!colorpickerON) return;
 
             Point ui_pos = e.GetPosition(_Colors);
+            Compute(ui_pos);
+        }
 
+        void Compute(Point ui_pos)
+        {
             double prop_x = ui_pos.X / _ColorsGrid.ActualWidth;
             double prop_y = ui_pos.Y / _ColorsGrid.ActualHeight;
 
